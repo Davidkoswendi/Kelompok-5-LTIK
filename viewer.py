@@ -1,10 +1,9 @@
-python
 import storage
 
 def menu_tampil_hapus():
     data = storage.get_all_data()
     if not data:
-        print("Belum ada catatan pengeluaran.")
+        print("📭 Belum ada catatan pengeluaran.")
         return
         
     print("\n--- DAFTAR PENGELUARAN ---")
@@ -21,7 +20,7 @@ def menu_tampil_hapus():
         data_baru = [item for item in data if item['id'] != id_hapus]
         
         if len(data_baru) == len(data):
-            print("ID tidak ditemukan!")
+            print("❌ ID tidak ditemukan!")
         else:
             storage.save_all_data(data_baru)
-            print(f"Data dengan ID {id_hapus} berhasil dihapus.")
+            print(f"🗑️ Data dengan ID {id_hapus} berhasil dihapus.")
